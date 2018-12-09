@@ -1,0 +1,18 @@
+- group:
+    description: "Basic checks for 326"
+    checks:
+      - version:
+         cmd: node --version
+         range: ^10.x.x
+      - version:
+         cmd: java -version
+         range: ^8.x.x
+      - version:
+         cmd: mysql --version
+         range: ^5.x.x
+      - version:
+         cmd: git --version
+         range: ^2.x.x
+      - contains: 
+         string: "@"
+         file: ~/.gitconfig
