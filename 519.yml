@@ -1,12 +1,19 @@
 - group:
-    description: "Basic checks for 519"
-    checks:
-      - version:
+   description: "Basic checks for 519"
+   checks:
+     - version:
          cmd: node --version
          range: ^10.x.x
-      - version:
+     - version:
          cmd: git --version
          range: ^2.x.x
-      - contains: 
+     # Email is configured in gitconfig
+     - contains: 
          string: "@"
          file: ~/.gitconfig
+- group:
+   description: "Virtualization support and tools"
+   checks:
+     - capability:
+         memory: 4000
+         cores: 1
