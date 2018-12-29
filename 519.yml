@@ -9,8 +9,10 @@
          range: ^2.x.x
      # Email is configured in gitconfig
      - contains: 
+         comment: Checking email is set for git commits
          string: "@"
          file: ~/.gitconfig
+
 - group:
    description: "Virtualization support and tools"
    checks:
