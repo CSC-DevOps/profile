@@ -6,12 +6,21 @@
          range: ^10.x.x
      - version:
          cmd: git --version
-         range: ^2.x.x
-     # Email is configured in gitconfig
+         range: ^2.x.x         
      - contains: 
          comment: Checking email is set for git commits
          string: "@"
          file: ~/.gitconfig
+
+- group:
+   description: "Shell utilities"
+   checks:
+     - version:
+         cmd: curl --version
+         range: ^7.x.x
+     - version:
+         cmd: wget --version
+         range: ^1.9.x         
 
 - group:
    description: "Virtualization support and tools"
