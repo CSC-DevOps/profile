@@ -29,3 +29,12 @@
 #        memory: 4000
 #        cores: 1
          virtualization: true
+     - version:
+         cmd: baker --version
+         range: ^0.6.15         
+     - version:
+         cmd: vagrant --version
+         range: ^2.1.1       
+     - version:
+         cmd: VBoxManage --version
+         range: ^5.2.18                     
