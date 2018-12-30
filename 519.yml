@@ -1,5 +1,5 @@
 - group:
-   description: "Basic checks for 519"
+   description: "Essential development tools"
    checks:
      - version:
          cmd: node --version
