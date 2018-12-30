@@ -37,6 +37,12 @@
          comment: Syntax highlighting should be enabled in vim!
          string: "syntax on"
          file: ~/.vimrc
+     - contains: 
+         # https://stackoverflow.com/questions/2514445/turning-off-auto-indent-when-pasting-text-into-vim
+         comment: Setting pastetoggle is useful when copying code in vim. Example `set pastetoggle=<F8>`
+         string: "set pastetoggle"
+         file: ~/.vimrc
+        
 
 - group:
    description: "Virtualization support and tools"
