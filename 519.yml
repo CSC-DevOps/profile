@@ -48,7 +48,7 @@
    description: "Virtualization support and tools"
    checks:
      - capability:
-         memory: 4000
+         memory: 4
          cores: 2
          virtualization: true
      - version:
