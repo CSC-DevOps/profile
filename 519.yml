@@ -29,10 +29,10 @@
          comment: Visual Studio Code is a great editor for editing configuration scripts.
          cmd: code --version
          range: ^1.30.1
-     - version:
-         comment: vim is useful for quick edits in the terminal
-         cmd: vim --version
-         range: ^8.0.x
+#     - version:
+#         comment: vim is useful for quick edits in the terminal
+#         cmd: vim --version
+#         range: ^8.0.x
      - contains: 
          comment: Syntax highlighting should be enabled in vim!
          string: "syntax on"
