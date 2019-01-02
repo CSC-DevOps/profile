@@ -24,7 +24,7 @@ You can check your local machine against a course profile, but running the follo
 opunit profile CSC-DevOps/profile:519.yml
 ```
 
-The resulting output might look something like this image below. The green checks ✔️ indicate that a check was passed, while the red x ❌ indicate that a check failed.
+The resulting output might look something like this image below. The green check ✔️ indicates that a check was passed, while the red x ❌ indicates that a check failed.
 
 For example, the first check will validate whether the version of node.js satisties the semver requirement of being at least `^10.x.x` or greater.
 
@@ -44,7 +44,7 @@ For example, if you are working on the [Pipelines workshop](https://github.com/C
 opunit verify local
 ```
 
-This will check whether you have correct setup your pipeline for the workshop. Before doing anything, it would be expected for most checks to fail. As you complete more steps from the workshop, more checks should pass!
+This will check whether you have correctly setup your pipeline for the workshop. Before doing anything, it would be expected for most checks to fail. As you complete more steps from the workshop, more checks should pass!
 
 
 
