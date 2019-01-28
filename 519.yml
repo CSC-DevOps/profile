@@ -59,4 +59,4 @@
          range: ^2.1.1       
      - version:
          cmd: VBoxManage --version
-         range: ^5.2.18                     
+         range: 5.2.x                     
