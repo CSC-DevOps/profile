@@ -16,6 +16,9 @@
    description: "Shell utilities"
    checks:
      - version:
+         cmd: ssh -V
+         range: ^2.x.x
+     - version:
          cmd: curl --version
          range: ^7.x.x
      - version:
