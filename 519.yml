@@ -25,6 +25,7 @@
          cmd: wget --version
          range: ^1.9.x      
      - version:
+         comment: Very useful utility for parsing json files. Download from https://stedolan.github.io/jq/download/
          cmd: jq --version
          range: ^1.5.x                  
 
