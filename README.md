@@ -2,6 +2,8 @@
 
 [opunit](https://github.com/ottomatica/opunit) is a simple tool for verifying the configuration of a machine, including your laptop and or any virtual machines you may have created.
 
+## Checking your local environment
+
 By running opunit, you'll be able to verify your machine is correctly setup for a course, workshop, or homework assignment. 
 
 In the simpliest case, opunit can check if you have the right versions of software installed. Beyond these simple checks, opunit can also verify the correct configuration of software and services that you'll be automating later in the course.
