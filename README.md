@@ -18,7 +18,7 @@ You can then install using npm:
 npm install ottomatica/opunit -g
 ```
 
-### Checking your local machine
+### Running opunit
 
 You can check your local machine against a course profile, but running the following command:
 
