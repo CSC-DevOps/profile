@@ -1,0 +1,13 @@
+- group:
+   description: "Checking if windows symlink enabled"
+   checks:
+     - command: 
+         exec: touch existingfile.txt
+         code: 0
+     - command: 
+         exec: mklink link.txt existingfile.txt
+         stdout: symbolic link created for link.txt <<===>> existingfile.txt
+         code: 0
+     - command: 
+         exec: rm -f existingfile.txt link.txt
+         code: 0
