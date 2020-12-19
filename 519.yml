@@ -64,7 +64,7 @@
          virtualization: true
      - version:
          cmd: bakerx --version
-         range: ^0.6.11        
+         range: ^0.7.0        
      - version:
          cmd: VBoxManage --version
-         range: ^6.0.14                     
+         range: ^6.1.16                     
