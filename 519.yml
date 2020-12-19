@@ -30,12 +30,20 @@
          range: ^1.5.x                  
 
 - group:
+   description: "Docable tools"
+   checks:
+     - version:
+         comment: You will need this tool in order to complete exercises.
+         cmd: docable-server --version
+         range: ^0.1.1                 
+
+- group:
    description: "Editor support"
    checks:
      - version:
          comment: Visual Studio Code is a great editor for editing configuration scripts.
          cmd: code --version
-         range: ^1.41.1
+         range: ^1.52.1
      - contains: 
          comment: Syntax highlighting should be enabled in vim!
          string: "syntax on"
