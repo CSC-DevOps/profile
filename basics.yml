@@ -17,7 +17,7 @@
     checks:
       - version:
           cmd: bash --version
-          range: ^5.0.x
+          range: ^4.x.x
       - version:
           cmd: ssh -V
           range: ^2.x.x
