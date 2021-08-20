@@ -1,0 +1,47 @@
+- group:
+   description: "Essential development tools"
+   checks:
+     - version:
+         cmd: node --version
+         range: ^14.15.x
+     - version:
+         cmd: git --version
+         range: ^2.24.x         
+     - contains: 
+         comment: Checking email is set for git commits
+         string: "@"
+         file: ~/.gitconfig
+
+- group:
+   description: "Shell utilities"
+   checks:
+     - version:
+         cmd: ssh -V
+         range: ^2.x.x
+     - version:
+         cmd: curl --version
+         range: ^7.x.x
+     - version:
+         cmd: wget --version
+         range: ^1.9.x      
+     - version:
+         comment: Very useful utility for parsing json files. Download from https://stedolan.github.io/jq/download/
+         cmd: jq --version
+         range: ^1.5.x                       
+
+- group:
+   description: "Editor support"
+   checks:
+     - version:
+         comment: Visual Studio Code is a great editor for editing configuration scripts.
+         cmd: code --version
+         range: ^1.59.1
+     - contains: 
+         comment: Syntax highlighting should be enabled in vim!
+         string: "syntax on"
+         file: ~/.vimrc
+     - contains: 
+         # https://stackoverflow.com/questions/2514445/turning-off-auto-indent-when-pasting-text-into-vim
+         comment: Setting pastetoggle is useful when copying code in vim. Example `set pastetoggle=<F8>`
+         string: "set pastetoggle"
+         file: ~/.vimrc
