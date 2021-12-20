@@ -94,13 +94,14 @@
          virtualization: true
 - group:
    description: "Virtualization platform"
-   checks:
+   any:
      - version:
          cmd: VBoxManage --version
          range: ^6.1.16
-     - version:
-         cmd: VBoxManage --version
-         range: ^6.1.16
+     - command:
+         comment: Mac M1 has native support for virtualization through OS hypervisor.
+         exec: uname -a
+         sdtout: Darwin*arm64 
 - group:
    description: "Virtualization tools"
    any:
