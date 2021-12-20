@@ -20,7 +20,36 @@
      - command:
          exec: git config  --get user.email
          exitCode: 0
-
+- group:
+   description: "Package manager for your operating system"
+   checks:
+     - version:
+         comment: Package manager for MacOS.
+         cmd: brew -v
+         range: ^3.3.9
+     - version:
+         comment: Package manager for Ubuntu (Debian) Linux.
+         cmd: apt -v
+         range: ^2.0.6
+     - version:
+         comment: Package manager for Windows.
+         cmd: choco -v
+         range: ^0.11.3
+- group:
+   description: "Check if have basic shell commands available"
+   any:
+     - command:
+         comment: Can you run the basics?.
+         exec: ls -l | sort
+         exitCode: 0
+     - command:
+         comment: If not, do you have git additional binaries on your path?
+         exec: REG query HKCU\Environment /F "C:\Program Files\Git\usr\bin"
+         exitCode: 0
+     - command:
+         comment: If not, do you have git additional binaries on your path?
+         exec: REG query "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment" /F "C:\Program Files\Git\usr\bin"
+         exitCode: 0
 - group:
    description: "Shell utilities"
    checks:
@@ -40,21 +69,7 @@
          comment: Very useful utility for parsing json files. Download from https://stedolan.github.io/jq/download/
          cmd: jq --version
          range: ^1.5.x                  
-- group:
-   description: "Package manager for your operating system"
-   checks:
-     - version:
-         comment: Package manager for MacOS.
-         cmd: brew -v
-         range: ^3.3.9
-     - version:
-         comment: Package manager for Ubuntu (Debian) Linux.
-         cmd: apt -v
-         range: ^2.0.6
-     - version:
-         comment: Package manager for Windows.
-         cmd: choco -v
-         range: ^0.11.3
+
 
 - group:
    description: "Docable tools"
