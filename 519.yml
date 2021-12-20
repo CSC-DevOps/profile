@@ -31,7 +31,7 @@
 
 - group:
    description: "Docable tools"
-   checks:
+   any:
      - version:
          comment: You will need this tool in order to complete exercises.
          cmd: docable-server --version
