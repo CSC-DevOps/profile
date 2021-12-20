@@ -36,6 +36,10 @@
          comment: You will need this tool in order to complete exercises.
          cmd: docable-server --version
          range: ^0.1.1                 
+     - version:
+         comment: You will need this tool in order to complete exercises.
+         cmd: docable-notebooks --version
+         range: ^0.1.1                 
 
 - group:
    description: "Editor support"
