@@ -81,7 +81,7 @@
          string: "set pastetoggle"
          file: ~/.vimrc
      - contains: 
-         comment: Setting pastetoggle is useful when copying code in vim (window). Example `set pastetoggle=<F8>`
+         comment: Setting pastetoggle is useful when copying code in vim (Windows). Example `set pastetoggle=<F8>`
          string: "set pastetoggle"
          file: ~/_vimrc
 
@@ -96,12 +96,13 @@
    description: "Virtualization platform"
    any:
      - version:
+         comment: A virtualization framework for Intel based processors.
          cmd: VBoxManage --version
-         range: ^6.1.16
+         range: ^6.1.30
      - command:
          comment: Mac M1 has native support for virtualization through OS hypervisor.
          exec: uname -a
-         sdtout: Darwin*arm64 
+         stdout: Darwin.*arm64
 - group:
    description: "Virtualization tools"
    any:
@@ -114,4 +115,3 @@
      - version:
          cmd: bakerx-m1 --version
          range: ^1.0.0
-
