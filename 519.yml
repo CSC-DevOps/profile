@@ -39,7 +39,7 @@
 
 - group:
    description: "Editor support"
-   checks:
+   any:
      - version:
          comment: Visual Studio Code is a great editor for editing configuration scripts.
          cmd: code --version
