@@ -57,6 +57,7 @@
          comment: Setting pastetoggle is useful when copying code in vim. Example `set pastetoggle=<F8>`
          string: "set pastetoggle"
          file: ~/.vimrc
+         optional: true
         
 
 - group:
