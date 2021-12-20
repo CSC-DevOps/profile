@@ -3,18 +3,30 @@
    checks:
      - version:
          cmd: node --version
-         range: ^12.14.x
+         range: ^16.13.x
      - version:
          cmd: git --version
-         range: ^2.24.x         
+         range: ^2.34.x
+- group:
+   description: "Git configuration"
+   checks:
      - contains: 
          comment: Checking email is set for git commits
          string: "@"
-         file: ~/.gitconfig
+         file: ~/.gitconfig       
+     - command:
+         exec: git config  --get user.name
+         exitCode: 0
+     - command:
+         exec: git config  --get user.email
+         exitCode: 0
 
 - group:
    description: "Shell utilities"
    checks:
+     - command:
+         exec: echo "hello\nworld" | tail -n +2
+         stdout: world
      - version:
          cmd: ssh -V
          range: ^2.x.x
@@ -31,45 +43,74 @@
 
 - group:
    description: "Docable tools"
-   any:
+   checks:
      - version:
          comment: You will need this tool in order to complete exercises.
          cmd: docable-server --version
-         range: ^0.1.1                 
-     - version:
-         comment: You will need this tool in order to complete exercises.
-         cmd: docable-notebooks --version
-         range: ^0.1.1                 
+         range: ^0.1.1    
+         optional: true             
 
 - group:
    description: "Editor support"
-   any:
+   checks:
      - version:
          comment: Visual Studio Code is a great editor for editing configuration scripts.
          cmd: code --version
          range: ^1.52.1
+     - command: 
+         exec: vim --version | head -n 1
+         stdout: Vi IMproved
+
+- group:
+   description: "Confirguring vim syntax highlighting"
+   any:
      - contains: 
          comment: Syntax highlighting should be enabled in vim!
          string: "syntax on"
          file: ~/.vimrc
      - contains: 
-         # https://stackoverflow.com/questions/2514445/turning-off-auto-indent-when-pasting-text-into-vim
+         comment: Syntax highlighting should be enabled in vim (windows)!
+         string: "syntax on"
+         file: ~/_vimrc
+- group:         
+   description: "Confirguring vim pastetoggle"
+    # https://stackoverflow.com/questions/2514445/turning-off-auto-indent-when-pasting-text-into-vim
+   any:
+     - contains: 
          comment: Setting pastetoggle is useful when copying code in vim. Example `set pastetoggle=<F8>`
          string: "set pastetoggle"
-         file: ~/.vimrc        
+         file: ~/.vimrc
+     - contains: 
+         comment: Setting pastetoggle is useful when copying code in vim (window). Example `set pastetoggle=<F8>`
+         string: "set pastetoggle"
+         file: ~/_vimrc
 
 - group:
-   description: "Virtualization support and tools"
+   description: "Computer capability and virtualization support"
    checks:
      - capability:
          memory: 4
          cores: 2
          virtualization: true
-     - version:
-         cmd: bakerx --version
-         range: ^0.7.0        
+- group:
+   description: "Virtualization platform"
+   checks:
      - version:
          cmd: VBoxManage --version
          range: ^6.1.16
-         optional: true
+     - version:
+         cmd: VBoxManage --version
+         range: ^6.1.16
+- group:
+   description: "Virtualization tools"
+   any:
+     - version:
+         cmd: multipass version
+         range: ^1.0.0
+     - version:
+         cmd: bakerx --version
+         range: ^6.1.16
+     - version:
+         cmd: bakerx-m1 --version
+         range: ^1.0.0
 
