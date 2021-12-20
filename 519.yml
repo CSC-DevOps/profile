@@ -6,7 +6,7 @@
          range: ^16.13.x
      - version:
          cmd: git --version
-         range: ^2.34.x
+         range: ^2.33.x
 - group:
    description: "Git configuration"
    checks:
@@ -75,6 +75,12 @@
          exec: uname -a
          stdout: Linux.*Microsoft
          expect: false
+     - command: 
+         comment: Warning, if this passes, you may be using WSL bash.
+         exec: bash -c "uname -a"
+         stdout: Linux.*Microsoft
+         expect: false
+         optional: true
 
 # - group:
 #    description: "Docable tools"
