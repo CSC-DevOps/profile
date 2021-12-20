@@ -22,7 +22,7 @@
          exitCode: 0
 - group:
    description: "Package manager for your operating system"
-   checks:
+   any:
      - version:
          comment: Package manager for MacOS.
          cmd: brew -v
@@ -53,9 +53,6 @@
 - group:
    description: "Shell utilities"
    checks:
-     - command:
-         exec: echo "hello\nworld" | tail -n +2
-         stdout: world
      - version:
          cmd: ssh -V
          range: ^2.x.x
@@ -70,15 +67,23 @@
          cmd: jq --version
          range: ^1.5.x                  
 
-
 - group:
-   description: "Docable tools"
+   description: "WSL check"
    checks:
-     - version:
-         comment: You will need this tool in order to complete exercises.
-         cmd: docable-server --version
-         range: ^0.1.1    
-         optional: true             
+     - command:
+         comment: You should not be running this program in a WSL environment.
+         exec: uname -a
+         stdout: Linux.*Microsoft
+         expect: false
+
+# - group:
+#    description: "Docable tools"
+#    checks:
+#      - version:
+#          comment: You will need this tool in order to complete exercises.
+#          cmd: docable-server --version
+#          range: ^0.1.1    
+#          optional: true             
 
 - group:
    description: "Editor support"
@@ -92,7 +97,7 @@
          stdout: Vi IMproved
 
 - group:
-   description: "Confirguring vim syntax highlighting"
+   description: "Configuring vim syntax highlighting"
    any:
      - contains: 
          comment: Syntax highlighting should be enabled in vim!
@@ -103,7 +108,7 @@
          string: "syntax on"
          file: ~/_vimrc
 - group:         
-   description: "Confirguring vim pastetoggle"
+   description: "Configuring vim pastetoggle"
     # https://stackoverflow.com/questions/2514445/turning-off-auto-indent-when-pasting-text-into-vim
    any:
      - contains: 
