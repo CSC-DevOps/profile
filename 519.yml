@@ -14,12 +14,12 @@
          comment: Checking email is set for git commits
          string: "@"
          file: ~/.gitconfig       
+     - command:     
+         exec: git config --global --get user.name
+         stdout: "[a-zA-Z0-9_]+"
      - command:
-         exec: git config  --get user.name
-         exitCode: 0
-     - command:
-         exec: git config  --get user.email
-         exitCode: 0
+         exec: git config --global --get user.email
+         stdout: "[a-zA-Z0-9_@]+"
 - group:
    description: "Package manager for your operating system"
    any:
