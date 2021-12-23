@@ -76,7 +76,7 @@
          stdout: Linux.*Microsoft
          expect: false
      - command: 
-         comment: Warning, if this passes, you may be using WSL bash.
+         comment: Warning, if you see a warning symbol, you may be using WSL bash.
          exec: bash -c "uname -a"
          stdout: Linux.*Microsoft
          expect: false
