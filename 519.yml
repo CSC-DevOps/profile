@@ -154,5 +154,5 @@
          cmd: bakerx --version
          range: ^6.1.16
      - version:
-         cmd: bakerx-m1 --version
+         cmd: basic --version
          range: ^1.0.0
