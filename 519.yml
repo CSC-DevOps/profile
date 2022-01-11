@@ -32,6 +32,10 @@
          cmd: apt -v
          range: ^2.0.6
      - version:
+         comment: Package manager for Fedora Linux
+         cmd: dnf --version
+         range: ^4.9.0
+     - version:
          comment: Package manager for Windows.
          cmd: choco -v
          range: ^0.11.3
