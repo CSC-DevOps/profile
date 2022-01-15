@@ -141,11 +141,14 @@
          comment: Setting pastetoggle is useful when copying code in vim (Windows). Example `set pastetoggle=<F8>`
          string: "set pastetoggle"
          file: ~/_vimrc
-     - command: 
-         comment: Using built in support in NeoVim
-         exec: vim --version | head -n 1
-         stdout: NVIM
-
+     - contains: 
+         comment: Setting pastetoggle is useful when copying code in NVIM. Example `set pastetoggle=<F8>`
+         string: "set pastetoggle"
+         file: ~/.config/nvim/init.vim
+     - contains: 
+         comment: Setting pastetoggle is useful when copying code in NVIM (Windows). Example `set pastetoggle=<F8>`
+         string: "set pastetoggle"
+         file: ~/AppData/Local/nvim/init.vim
 
 - group:
    description: "Computer capability and virtualization support"
