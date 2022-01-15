@@ -96,15 +96,22 @@
 #          optional: true             
 
 - group:
-   description: "Editor support"
+   description: "IDE support"
    checks:
      - version:
          comment: Visual Studio Code is a great editor for editing configuration scripts.
          cmd: code --version
          range: ^1.52.1
+
+- group:
+   description: "CLI Editor support"
+   any:
      - command: 
          exec: vim --version | head -n 1
          stdout: Vi IMproved
+     - command: 
+         exec: vim --version | head -n 1
+         stdout: NVIM
 
 - group:
    description: "Configuring vim syntax highlighting"
@@ -117,6 +124,11 @@
          comment: Syntax highlighting should be enabled in vim (windows)!
          string: "syntax on"
          file: ~/_vimrc
+     - command: 
+         comment: Using built in support in NeoVim
+         exec: vim --version | head -n 1
+         stdout: NVIM
+
 - group:         
    description: "Configuring vim pastetoggle"
     # https://stackoverflow.com/questions/2514445/turning-off-auto-indent-when-pasting-text-into-vim
@@ -129,6 +141,11 @@
          comment: Setting pastetoggle is useful when copying code in vim (Windows). Example `set pastetoggle=<F8>`
          string: "set pastetoggle"
          file: ~/_vimrc
+     - command: 
+         comment: Using built in support in NeoVim
+         exec: vim --version | head -n 1
+         stdout: NVIM
+
 
 - group:
    description: "Computer capability and virtualization support"
