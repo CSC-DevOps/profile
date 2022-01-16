@@ -36,6 +36,10 @@
          cmd: dnf --version
          range: ^4.9.0
      - version:
+         comment: Package manager for Gentoo Linux
+         cmd: emerge --version
+         range: ^3.0.28
+     - version:
          comment: Package manager for Windows.
          cmd: choco -v
          range: ^0.11.3
