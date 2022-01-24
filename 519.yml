@@ -184,7 +184,7 @@
          range: ^1.0.0
      - version:
          cmd: bakerx --version
-         range: ^6.1.16
+         range: ^0.7.x
      - version:
          cmd: basic --version
          range: ^1.0.0
